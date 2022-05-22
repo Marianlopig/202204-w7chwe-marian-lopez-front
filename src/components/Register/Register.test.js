@@ -54,7 +54,7 @@ describe("Given a Register component form", () => {
         name: "Marian",
         username: "marianlop",
         password: "password",
-        image: "",
+        image: null,
       };
       const nameField = screen.getByPlaceholderText("Name");
       const usernameField = screen.getByPlaceholderText("Username");

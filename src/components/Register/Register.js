@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import { registerThunk } from "../../redux/thunks/authThunk/authThunk";
 import { RegisterStyles } from "./RegisterStyles";
 
@@ -9,7 +10,7 @@ const Register = () => {
     name: "",
     username: "",
     password: "",
-    image: "",
+    image: null,
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -47,6 +48,7 @@ const Register = () => {
               value={user.name}
               onChange={(event) => handleChange(event)}
               placeholder="Name"
+              autoComplete="off"
             />
           </label>
           <label>
@@ -57,6 +59,7 @@ const Register = () => {
               value={user.username}
               onChange={(event) => handleChange(event)}
               placeholder="Username"
+              autoComplete="off"
             />
           </label>
           <label>
@@ -68,6 +71,7 @@ const Register = () => {
                 value={user.password}
                 onChange={(event) => handleChange(event)}
                 placeholder="Password"
+                autoComplete="off"
               />
             </div>
           </label>
@@ -77,15 +81,20 @@ const Register = () => {
               <input
                 id="image"
                 type="file"
-                accpet="image/png, image/jpg"
-                value={user.image}
-                onChange={(event) => handleChange(event)}
+                accept="image/png, image/jpg"
+                onChange={(event) => {
+                  setUser({
+                    ...user,
+                    [event.target.id]: event.target.files[0],
+                  });
+                }}
               />
             </div>
           </label>
           <div className="submitContainer">
             <input type="submit" value="Submit" disabled={buttonDisabled} />
           </div>
+          <Link to="/login">Already have an account?</Link>
         </form>
       </div>
     </RegisterStyles>

@@ -60,6 +60,7 @@ const LoginForm = () => {
           <div className="submitContainer">
             <button disabled={buttonDisabled}>LogIn</button>
           </div>
+          <Link to="/create">Create an account</Link>
         </form>
       </div>
     </LoginFormStyles>
