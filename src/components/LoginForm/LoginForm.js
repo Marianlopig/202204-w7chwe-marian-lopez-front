@@ -47,7 +47,7 @@ const LoginForm = () => {
               id="username"
               value={formData.username}
               onChange={changeData}
-              placeholder="Name"
+              placeholder="Username"
             />
           </label>
           <label htmlFor="password">
