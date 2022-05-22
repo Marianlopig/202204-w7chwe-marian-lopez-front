@@ -3,8 +3,10 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { loginThunk } from "../../redux/thunks/authThunk/authThunk";
 import { LoginFormStyles } from "./LoginFormStyles";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const blankData = {
     username: "",
     password: "",
@@ -32,7 +34,7 @@ const LoginForm = () => {
     event.preventDefault();
     resetForm();
     dispatch(loginThunk(formData));
-    <Link to="/" />;
+    navigate("/list");
   };
 
   return (
