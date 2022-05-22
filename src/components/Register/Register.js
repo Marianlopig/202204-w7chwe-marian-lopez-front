@@ -67,7 +67,7 @@ const Register = () => {
             <div className="slider">
               <input
                 id="password"
-                type="text"
+                type="password"
                 value={user.password}
                 onChange={(event) => handleChange(event)}
                 placeholder="Password"
