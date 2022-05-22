@@ -1,6 +1,9 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
-import { loginActionCreator } from "../../features/authSlice/authSlice";
+import {
+  createdActionCreator,
+  loginActionCreator,
+} from "../../features/authSlice/authSlice";
 
 const API_URL = "https://two02204-w7chwe-marian-lopez.onrender.com";
 
@@ -23,5 +26,6 @@ export const registerThunk =
       name,
       image,
     };
-    await axios.post(`${API_URL}/users/register`, body);
+    const { data } = await axios.post(`${API_URL}/users/register`, body);
+    dispatch(createdActionCreator(data));
   };
