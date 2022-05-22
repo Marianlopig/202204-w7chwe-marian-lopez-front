@@ -13,3 +13,15 @@ export const loginThunk = (userData) => async (dispatch) => {
     dispatch(loginActionCreator({ username: userInfo.username }));
   }
 };
+
+export const registerThunk =
+  ({ username, password, name, image }) =>
+  async (dispatch) => {
+    const body = {
+      username,
+      password,
+      name,
+      image,
+    };
+    await axios.post(`${API_URL}/users/register`, body);
+  };
