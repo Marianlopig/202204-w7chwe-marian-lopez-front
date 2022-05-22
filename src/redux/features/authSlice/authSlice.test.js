@@ -1,6 +1,6 @@
 import authReducer, { loginActionCreator } from "./authSlice";
 
-describe("Given a authSlice with an loadRobots reducer", () => {
+describe("Given a authSlice with an loginActionCreator", () => {
   describe("When we do a login with a value username and a password", () => {
     test("Then it should return the username", () => {
       const userLoged = { username: "Marian" };
