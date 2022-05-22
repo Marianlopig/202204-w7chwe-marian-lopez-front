@@ -27,7 +27,7 @@ describe("Given a Login form component", () => {
           </Provider>
         </BrowserRouter>
       );
-      const userField = screen.getByPlaceholderText("Name");
+      const userField = screen.getByPlaceholderText("Username");
       const passwordField = screen.getByPlaceholderText("Password");
       const button = screen.getByRole("button");
 
@@ -51,7 +51,7 @@ describe("Given a Login form component", () => {
         password: "password",
       };
 
-      const userField = screen.getByPlaceholderText("Name");
+      const userField = screen.getByPlaceholderText("Username");
       const passwordField = screen.getByPlaceholderText("Password");
       const button = screen.getByRole("button");
 
