@@ -25,4 +25,20 @@ export const usersHandlers = [
       );
     }
   ),
+  rest.get(
+    "https://two02204-w7chwe-marian-lopez.onrender.com/users/list",
+    (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json([
+          {
+            name: "Marian",
+            username: "marianlop",
+            id: "1",
+            image: "marian.png",
+          },
+        ])
+      );
+    }
+  ),
 ];

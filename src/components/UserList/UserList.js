@@ -1,7 +1,7 @@
 import UserProfile from "../UserProfile/UserProfile";
 import { UserListStyles } from "./UserListStyles";
 
-const UserList = (users) => {
+const UserList = () => {
   return (
     <UserListStyles>
       <div className="maincontainer">
