@@ -4,6 +4,7 @@ import LoginForm from "./LoginForm";
 import store from "../../redux/store/store";
 import userEvent from "@testing-library/user-event";
 import { loginThunk } from "../../redux/thunks/authThunk/authThunk";
+import { BrowserRouter } from "react-router-dom";
 
 const mockDispatch = jest.fn();
 jest.mock("react-redux", () => ({
@@ -20,9 +21,11 @@ describe("Given a Login form component", () => {
   describe("When it is rendered", () => {
     test("Then it should render a button, two inputs element", () => {
       render(
-        <Provider store={{ ...store }}>
-          <LoginForm />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={{ ...store }}>
+            <LoginForm />
+          </Provider>
+        </BrowserRouter>
       );
       const userField = screen.getByPlaceholderText("Name");
       const passwordField = screen.getByPlaceholderText("Password");
@@ -36,9 +39,11 @@ describe("Given a Login form component", () => {
   describe("When the user click on submit button with all fields filled", () => {
     test("Then it should dispatch login thunk", () => {
       render(
-        <Provider store={{ ...store }}>
-          <LoginForm />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={{ ...store }}>
+            <LoginForm />
+          </Provider>
+        </BrowserRouter>
       );
 
       const expectedFormData = {
