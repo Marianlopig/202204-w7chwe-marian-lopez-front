@@ -76,6 +76,9 @@ export const RegisterStyles = styled.div`
           font-size: 20px;
           border-radius: 15px;
           align-items: center;
+          :disabled {
+            opacity: 0.3;
+          }
         }
       }
     }
