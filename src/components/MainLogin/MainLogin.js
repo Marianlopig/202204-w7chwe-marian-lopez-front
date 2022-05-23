@@ -6,12 +6,7 @@ import { MainLoginStyles } from "./MainLoginStyles";
 const MainLogin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const loggedIn = useSelector(({ auth }) => {
-    if (auth?.username) return true;
-    else {
-      return false;
-    }
-  });
+  const loggedIn = useSelector(({ auth }) => auth?.username);
   const logOut = () => {
     localStorage.removeItem("token");
     dispatch(logoutActionCreator());

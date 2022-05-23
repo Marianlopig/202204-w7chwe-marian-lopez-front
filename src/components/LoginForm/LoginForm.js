@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginThunk } from "../../redux/thunks/authThunk/authThunk";
 import { LoginFormStyles } from "./LoginFormStyles";
-import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const navigate = useNavigate();
